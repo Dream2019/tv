@@ -1,0 +1,11 @@
+[DEFAULT]
+BASEURL=http://www.szook.cn/
+[InternetShortcut]
+URL=http://www.maocun.net/
+Modified=E04F38DC6744CC01BB
+IconIndex=46
+IconFile=C:\WINDOWS\system32\SHELL32.dll
+HotKey=0
+IDList=
+[{000214A0-0000-0000-C000-000000000046}]
+Prop3=19,2

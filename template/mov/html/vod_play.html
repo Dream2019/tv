@@ -1,0 +1,174 @@
+
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>正在播放[vod:name][vod:playname] - [vod:playshow]在线观看 - {maccms:name}</title>
+<meta name="Keywords" content="[vod:name]小俊模板[vod:playname]小俊工作室[vod:playshow]高清在线观看" />
+<meta name="description" content="[vod:name][vod:playname][vod:playshow]免费在线观看" />
+<meta http-equiv="x-ua-compatible" content="ie=7" />
+{maccms:include}
+[vod:history]
+
+<body class="channel4">
+{maccms:head}
+<style>
+	    #xlu{
+	   	    display: block;
+    width: 968px;
+    margin: 9px auto;
+    height: 30px;
+    position: relative;
+    top: 8px;
+    text-align: center;
+    overflow: hidden;
+	   }
+  #xlu>button{
+  	 font-size: 12px;
+  	 color: #fff;
+    background: #000;
+    text-align: center;
+    padding: 5px 7px;
+    margin: 4px;
+    border-radius: 2px;
+    border: 1px solid #eee;
+  }  
+</style>
+<div id="endplay">
+<div class="player">
+<div id="play">
+<div class="ptitle"><p class="name">当前位置：<a href='/'>首页</a>&nbsp;&nbsp;&raquo;&nbsp;&nbsp;<a href='[vod:typelink]' >[vod:typename]</a>&nbsp;&nbsp;&raquo;&nbsp;&nbsp; [vod:name]</p></div>
+<!--<div id="player" class="player">
+[vod:playerinfo][vod:player]
+</div>-->
+<iframe src="" id="player" style="width: 100%;height: 520px;;"></iframe>
+<div id="xlu" style="display: block;width:968px;margin: 0 auto;" >
+<button onclick="xldata('http://api.baiyug.cn/vip/index.php?url=')">线路一</button>
+<button onclick="xldata('http://vip.jlsprh.com/index.php?url=')">线路二</button>
+<button onclick="xldata('http://player.gakui.top/?url=')">线路三</button>
+<button onclick="xldata('http://api.wlzhan.com/sudu/?url=')">线路四</button>
+<button onclick="xldata('http://aikan-tv.com/?url=')">线路五</button>
+<button onclick="xldata('https://api.flvsp.com/?url=')">线路六</button>
+<!--<button onclick="xldata('http://api.xfsub.com/index.php?url=')">线路七</button>
+<button onclick="xldata('http://api.xfsub.com/index.php?url=')">线路八</button>
+<button onclick="xldata('http://api.xfsub.com/index.php?url=')">线路九</button>
+<button onclick="xldata('http://api.xfsub.com/index.php?url=')">线路十</button>-->
+</div>
+ </div>
+</div>
+</div>
+
+<div id="playmain">
+   {maccms:play}
+            <div class="details-con3-head">
+                <ul class="fch1 dch1">
+                   <li class="active-style8"><i></i>[play:show]</li>
+				   </ul>
+            </div>
+             <div class="details-con3-body">
+                <div class="dcb" style="display:block;">
+                  <div class="you-likes">
+              <div class="details-con2-wrap">
+                 <ul class="details-con2-list">
+                {maccms:url order=asc}
+                 <li ><a href="[url:link]&path=[url:path]" target="_blank">[url:name]</a></a></li>
+				   {/maccms:url}  
+                </ul>																	   
+               </div>
+               </div>                 	   
+             </div>
+			   
+
+          </div><!--details-con2-->
+		{/maccms:play}   
+          <div class="details-con3">
+            <div class="details-con3-head">
+                <ul class="fch1 dch1">
+                   <li class="active-style8"><i></i>猜你喜欢作品</li>
+                   <li>相关导演作品</li>                   <li>相关主演作品</li>                                </ul>
+            </div>
+
+             <div class="details-con3-body">
+                <div class="dcb" style="display:block;">
+                  <div class="you-like">
+                    <ul class="fcb-ul">
+                       
+                      {maccms:vod num=5 by=rnd type=current order=desc}
+                       <li>
+                         <a href="[vod:link]" class="fcb-pic" target="_blank"><img class="scrollLoading" data-url="[vod:pic]" src="{maccms:path_tpl}img/loading.gif" width="160" height="220" alt="[vod:name]"></a>
+                         <div class="movie-headline1"><a href="[vod:link]">[vod:name]</a></div>
+                       </li>
+                          {/maccms:vod}
+                    </ul>
+                  </div>
+                </div><!--dcb-->
+
+                                <div class="dcb">
+                  <div class="you-like">
+                    <ul class="fcb-ul">
+                      
+                       {maccms:vod num=5 similar=directed order=desc}
+                       <li>
+                         <a href="[vod:link]" class="fcb-pic" target="_blank"><img class="scrollLoading" data-url="[vod:pic]" src="{maccms:path_tpl}img/loading.gif" width="160" height="220" alt="[vod:name]"></a>
+                         <div class="movie-headline1"><a href="[vod:link]">[vod:name]</a></div>
+                       </li>
+                          {/maccms:vod}
+                    </ul>
+                  </div>
+                </div><!--dcb2-->
+                                
+                                <div class="dcb">
+                  <div class="you-like">
+                    <ul class="fcb-ul">
+                       {maccms:vod num=5 similar=starring order=desc}
+                       <li>
+                         <a href="[vod:link]" class="fcb-pic" target="_blank"><img class="scrollLoading" data-url="[vod:pic]" src="{maccms:path_tpl}img/loading.gif" width="160" height="220" alt="[vod:name]"></a>
+                         <div class="movie-headline1"><a href="[vod:link]">[vod:name]</a></div>
+                       </li>
+                          {/maccms:vod}
+                    </ul>
+                  </div>
+                </div><!--dcb3-->
+                                
+             </div><!--details-con3-body-->
+          </div><!--details-con2-->
+		   <div class="details-con3 mt20">
+             <div class="details-con3-head">
+                <ul class="fch1 dch1">
+                   <li class="active-style8"><i></i>用户评论</li>
+               </ul>
+             </div><!--details-con3-head-->
+
+             <div class="details-con3-body">
+                             <div class="dcb" style="display:block;">
+                 <div class="dcb-show-pic-wrap" id="comments">
+                
+               <div id="comment" class="comment">[vod:comment]</div>
+
+                  
+                  </div>
+               </div><!--dcb-->
+                              
+             </div><!--details-con3-body-->
+          </div><!--details-con2-->
+
+       </div><!--details-left-->
+
+<!--/main-->
+{maccms:foot}
+</body>
+<script>
+	function GetQueryString (name){
+	  var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+      var r = window.location.search.substr(1).match(reg);
+      if(r!=null)return  unescape(r[2]); return null;
+
+	  }
+	  function xldata(strUrl){
+	  	$('#player').attr('src',strUrl+GetQueryString('path'));
+	  }
+	$(function(){
+		$('#player').attr('src','http://api.baiyug.cn/vip/index.php?url='+GetQueryString('path'));
+	})
+</script>
+</html>

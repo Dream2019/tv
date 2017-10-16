@@ -1,0 +1,1 @@
+﻿document.writeln("<a href=\"http:\/\/www.zhaolinglei.com\" target=\"_blank\"><img alt=\"1938??\" src=\"http:\/\/www.zhaolinglei.com\/\/ggm1938\/300x250.gif\" width=\"100%\" height=\"100%\" \/><\/a>")
