@@ -11,15 +11,48 @@
 <meta name="description" content="{maccms:name}提供[vod:name][vod:playname]免费手机在线观看,[vod:name]剧情介绍,[vod:name]数据海报" />
 {maccms:include}
 
-
+<style>
+#xlu{
+	display: block;
+    width: 100%;
+  
+    height: 30px;
+    position: relative;
+   
+    text-align: center;
+    overflow: hidden;
+	   }
+  #xlu>button{
+  	 font-size: 12px;
+  	 color: #fff;
+    background: #000;
+    text-align: center;
+    
+   padding: 3px;
+    border-radius: 2px;
+    border: 1px solid #eee;
+  } 
+</style>
 </head>
 <body>
 
 <script>var SitePath='{maccms:path}',SiteAid='{maccms:siteaid}',SiteTid='{maccms:sitetid}',SiteId='{maccms:siteid}';</script>
 
 {maccms:head}
-
-	<div class="player mb"><div class="main">[vod:playerinfo][vod:player]</div></div>
+<iframe src="" id="player" class="player" style="width: 100%;height:250px;;"></iframe>
+<div id="xlu"  >
+<button onclick="xldata('http://api.baiyug.cn/vip/index.php?url=')">线路一</button>
+<button onclick="xldata('http://vip.jlsprh.com/index.php?url=')">线路二</button>
+<button onclick="xldata('http://player.gakui.top/?url=')">线路三</button>
+<button onclick="xldata('http://api.wlzhan.com/sudu/?url=')">线路四</button>
+<button onclick="xldata('http://aikan-tv.com/?url=')">线路五</button>
+<button onclick="xldata('https://api.flvsp.com/?url=')">线路六</button>
+<!--<button onclick="xldata('http://api.xfsub.com/index.php?url=')">线路七</button>
+<button onclick="xldata('http://api.xfsub.com/index.php?url=')">线路八</button>
+<button onclick="xldata('http://api.xfsub.com/index.php?url=')">线路九</button>
+<button onclick="xldata('http://api.xfsub.com/index.php?url=')">线路十</button>-->
+</div>
+	<!--<div class="player mb"><div class="main">[vod:playerinfo][vod:player]</div></div>-->
     <div class="main">
 			<div class="tab-title mb clearfix">
     <ul>
@@ -96,8 +129,21 @@
 </div>
 <!--/底部-->
 {maccms:foot}
-<!--/禁止右键-->
-<script type="text/javascript"> document.body.oncontextmenu=document.body.ondragstart= document.body.onselectstart=document.body.onbeforecopy=function(){return false;};
-document.body.onselect=document.body.oncopy=document.body.onmouseup=function(){document.selection.empty();}; </script>
+
 </body>
+<script>
+		function GetQueryString (name){
+	  var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+      var r = window.location.search.substr(1).match(reg);
+      if(r!=null)return  unescape(r[2]); return null;
+
+	  }
+	 
+	$(function(){
+	function xldata(strUrl){
+	  	$('#player').attr('src',strUrl+GetQueryString('path'));
+	  }
+		$('#player').attr('src','http://api.baiyug.cn/vip/index.php?url='+GetQueryString('path'));
+	})
+</script>
 </html>
